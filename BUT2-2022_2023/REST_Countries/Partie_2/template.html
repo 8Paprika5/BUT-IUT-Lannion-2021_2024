@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+    <style>
+        body {
+            margin: 10%;
+            background-color: #141b33;
+        }
+
+        tbody {
+            border-end-start-radius: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+            font-family: sans-serif;
+            box-shadow: 0 3px 5px black;
+            border-collapse: collapse;
+            border-radius: 1em;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 1em;
+        }
+
+        th {
+            background-color: #20273d;
+            font-weight: bold;
+            color: rgb(223, 223, 223);
+            border: solid 1px #161d35;
+        }
+
+        td {
+            background-color: #3a4054;
+            height: max-content;
+            border: solid 1px #20273d;
+            color: rgb(223, 223, 223);
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Pays</th>
+                <th>Nom</th>
+                <th>Population</th>
+                <th>Surface</th>
+                <th>Densité (Population)</th>
+                <th>Continent</th>
+                <th>Drapeau</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="num">Numéro 1</td>
+                <td class="nom">France</td>
+                <td class="pop">68 000 000</td>
+                <td class="surface">98723 km<sup>2</sup></td>
+                <td class="densite">38902</td>
+                <td class="continent">Europe</td>
+                <td class="url"><img src="" alt="Drapeau Pays" title="Drapeau"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

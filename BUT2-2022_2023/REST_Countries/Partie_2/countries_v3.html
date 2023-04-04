@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pays TP REST Countries</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>TP Rest Countries Partie 2</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Pays</th>
+                <th>Nom</th>
+                <th>Population</th>
+                <th>Surface</th>
+                <th>Densité (Population)</th>
+                <th>Continent</th>
+                <th>Drapeau</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <div class="infosPays">
+        <h1 class="nomPays"></h1>
+        <div class="infos">
+            <div>
+                <h2>Capitale</h2>
+                <span class="capPays"></span>
+            </div>
+            <div>
+                <h2>Population</h2>
+                <span class="popPays"></span>
+            </div>
+            <div>
+                <h2>Surface</h2>
+                <span class="surfacePays"></span>
+            </div>
+            <div>
+                <h2>Densité</h2>
+                <span class="densitePays"></span>
+            </div>
+            <div>
+                <h2>Continent</h2>
+                <span class="continentPays"></span>
+            </div>
+        </div>
+        <img class="fermer_fen" src="../croix.png" alt="Bouton Fermer" title="Femer la fenêtre" width="30px" height="30px">
+    </div>
+
+    <div class="drapeauPays">
+        <img src="" alt="Drapeau Pays" class="dPays" width="700px" height="450px">
+        <img class="fermer_fen2" src="../croix.png" alt="Bouton Fermer" title="Femer la fenêtre" width="30px"
+            height="30px">
+    </div>
+
+    <button class="precedent">PRÉC</button>
+    <span class="num_page">1</span>
+    <button class="suivant">SUIV</button>
+
+</body>
+
+<script src="../countries.js"></script>
+<script>
+
+    const tbody = document.querySelector('tbody');
+
+    var num = document.querySelector(".num_page");
+    var numeroPage = parseInt(num.innerHTML);
+
+    var templates = tbody.children;
+
+    let precedent = document.querySelector(".precedent");
+    let suivant = document.querySelector(".suivant");
+
+    var indice = 0;
+    var num_page = 0;
+    var cpt = 1;
+
+    /**
+     * 
+     * Fonction qui génère tous les pays au début du chargement de la page
+     * 
+     * */
+    function afficherPays() {
+
+        for (const country in all_countries) {
+            let num = document.createElement("td");
+            let nom = document.createElement("td");
+            let pop = document.createElement("td");
+            let surface = document.createElement("td");
+            let densite = document.createElement("td");
+            let continent = document.createElement("td");
+            let url = document.createElement("td");
+            let image = document.createElement("img");
+
+            url.appendChild(image);
+            url.classList.add("url");
+
+            let tr = document.createElement("tr");
+            tr.classList.add("template");
+
+            tr.setAttribute("onclick", "afficherInfosPays('" + country + "')");
+            tr.setAttribute("onmouseover", "designOver(this)");
+            tr.setAttribute("onmouseout", "nodesignOver(this)");
+
+            num.innerHTML = cpt;
+            tr.appendChild(num);
+
+            // Nom du pays
+            nom.innerHTML = all_countries[country]._nom;
+            tr.appendChild(nom);
+
+            // Population du pays
+            pop.innerHTML = all_countries[country]._population;
+            tr.appendChild(pop);
+
+            // Superficie du pays
+            if (all_countries[country]._superficie != null) {
+                surface.innerHTML = all_countries[country]._superficie + " km<sup>2</sup>";
+                tr.appendChild(surface);
+            } else {
+                surface.innerHTML = "Indisponible";
+                tr.appendChild(surface);
+            }
+
+            // Densité du pays
+            if (all_countries[country].getPopDensity() != null) {
+                densite.innerHTML = all_countries[country].getPopDensity();
+                tr.appendChild(densite);
+            } else {
+                densite.innerHTML = "Indisponible";
+                tr.appendChild(densite);
+            }
+
+            // Continent du pays
+            continent.innerHTML = all_countries[country]._continent;
+            tr.appendChild(continent);
+
+            // Drapeau du pays
+            image.src = all_countries[country]._drapeau;
+            image.setAttribute("onclick", "afficherDrapeau('" + country + "')");
+            tr.appendChild(url);
+
+            tbody.appendChild(tr);
+            cpt++;
+
+        }
+    }
+
+    /**
+     * 
+     * Fonction qui met à jour l'affichage des lignes. 
+     * En fonction de l'indice, cela enlève les parties autour des 25 pays à afficher
+     * 
+     * */
+    function update() {
+
+        for (let i = 0; i < templates.length; i++) {
+            if (i < indice) {
+                templates[i].style.visibility = "collapse";
+            }
+            if ((indice < i+1) && (i < indice + 27)) {
+                templates[i].style.visibility = "visible";
+            }
+            if (i > indice + 25) {
+                templates[i].style.visibility = "collapse";
+            }
+        }
+
+    }
+
+    /**
+     * 
+     * Fonction qui affiche/retire les boutosn Suivant et Précédent 
+     * En fonction du numéro de page, si on est au début, cela enlève le "Précédent" et la même chose pour "Suivant"
+     * 
+     * */
+    function afficheBoutons() {
+        if (num_page <= 1) {
+            precedent.style.display = "none";
+        } else {
+            precedent.style.display = "block";
+        }
+
+        if (num_page >= cpt / 26) {
+            suivant.style.display = "none";
+        } else {
+            suivant.style.display = "block";
+        }
+    }
+
+    /**
+     * 
+     * Fonction qui génère la PopUp de détails d'un pays lorsqu'on le clique dessus
+     * 
+     */
+    function afficherInfosPays(code) {
+
+        let infosPays = document.querySelector(".infosPays");
+        let nomPays = document.querySelector(".nomPays");
+        let capitalePays = document.querySelector(".capPays");
+        let popPays = document.querySelector(".popPays");
+        let surfacePays = document.querySelector(".surfacePays");
+        let densitePays = document.querySelector(".densitePays");
+        let continentPays = document.querySelector(".continentPays");
+
+        let fermer = document.querySelector(".fermer_fen");
+
+        infosPays.style.display = "flex";
+
+        let pays = getPays(code);
+        let nom = pays._nom;
+        let capitale = pays._capitale;
+        let population = pays._population;
+        let surface = pays._superficie;
+        let densite = pays.getPopDensity();
+        let continent = pays._continent;
+
+        nomPays.innerHTML = nom;
+        if(capitale == null) {
+            capitale = "Inconnu";
+        }
+        capitalePays.innerHTML = capitale;
+        popPays.innerHTML = population;
+        if(surface == null) {
+            surfacePays.innerHTML = "Inconnu";
+        } else {
+            surfacePays.innerHTML = surface + " km<sup>2</sup>";
+        }
+        if(densite == null) {
+            densite = "Inconnu";
+        }
+        densitePays.innerHTML = densite;
+        continentPays.innerHTML = continent;
+
+
+        fermer.addEventListener("click", () => {
+            infosPays.style.display = "none";
+        });
+
+    }
+
+    /**
+     * 
+     * Fonction qui génère la PopUp de détails du drapeau d'un pays lorsqu'on le clique dessus
+     * 
+     */
+    function afficherDrapeau(code) {
+
+        let drapeauPays = document.querySelector(".drapeauPays");
+        let dPays = document.querySelector(".dPays");
+
+        let fermer = document.querySelector(".fermer_fen2");
+
+        drapeauPays.style.display = "flex";
+
+        const pays = getPays(code);
+        const drapeau = pays._drapeau;
+
+        dPays.src = pays._drapeau;
+
+        fermer.addEventListener("click", () => {
+            drapeauPays.style.display = "none";
+        });
+    }
+
+    /**
+     * 
+     * Fonction qui récupère les informations d'un pays selon son code passé en paramètre
+     * 
+     */
+    function getPays(code) {
+
+        for (const country in all_countries) {
+            if (all_countries[country]._codeAlpha3 === code) {
+                return all_countries[country];
+            }
+        }
+    }
+
+    /**
+     * 
+     * L'évènement du bouton Précédent qui met à jour le numéro de page, l'indice
+     * 
+     */
+    precedent.addEventListener("click", () => {
+        num_page -= 1;
+        indice -= 26;
+        numeroPage -= 1;
+        num.innerHTML = numeroPage;
+        update();
+        afficheBoutons();
+    });
+
+    /**
+     * 
+     * L'évènement du bouton Suivant qui met à jour le numéro de page, l'indice
+     * 
+     */
+    suivant.addEventListener("click", () => {
+        num_page += 1;
+        indice += 26;
+        update();
+        numeroPage += 1;
+        num.innerHTML = numeroPage;
+        afficheBoutons();
+    });
+
+    afficherPays();
+    update();
+    num_page += 1;
+    afficheBoutons();
+
+    /**
+     *
+     * Fonction de Design lors du hover de la souris sur une template tr 
+     * 
+     */
+    function designOver(row) {
+        var cells = row.getElementsByTagName("td");
+        for (var i = 0; i < cells.length; i++) {
+            cells[i].style.backgroundColor = "#3d4155";
+        }
+    }
+    function nodesignOver(row) {
+        var cells = row.getElementsByTagName("td");
+        for (var i = 0; i < cells.length; i++) {
+            cells[i].style.backgroundColor = "";
+        }
+    }
+
+</script>
+
+</html>

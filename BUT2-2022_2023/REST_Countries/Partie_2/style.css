@@ -1,0 +1,277 @@
+body {
+    margin: 5% 10%;
+    background-color: #141b33;
+}
+
+h1 {
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+tbody {
+    border-end-start-radius: 20px;
+}
+
+table {
+    width: 100%;
+    height: max-content;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+    box-shadow: 0 3px 5px black;
+    border: none;
+    border-radius: 1em;
+}
+
+thead {
+    position: sticky;
+    top: -1px;
+    z-index: 10;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 1em;
+}
+
+th {
+    background-color: #20273d;
+    font-weight: bold;
+    color: rgb(223, 223, 223);
+    border: solid 0 #161d35;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.thDrapeau,
+.thId {
+    cursor: no-drop;
+}
+
+.thDrapeau:hover,
+.thId:hover,
+.thDrapeau:focus,
+.thId:focus {
+    background-color: #20273d;
+}
+
+th:hover {
+    background-color: #2c3553;
+}
+
+.thFocus {
+    background-color: #3b466d;
+}
+
+td {
+    background-color: #43485c;
+    height: max-content;
+    border: solid 0 #20273d;
+    color: rgb(223, 223, 223);
+    transition: all 0.2s ease-in-out;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.url {
+    display: flex;
+    justify-content: center;
+}
+
+tr img {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.template:hover {
+    cursor: pointer;
+    background-color: #141b33;
+}
+
+.precedent,
+.precedent_filtres,
+.suivant,
+.suivant_filtres {
+    position: fixed;
+    bottom: 1em;
+    font-size: 1em;
+    font-family: sans-serif;
+    padding: 1em 2em;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 5px black;
+    color: white;
+    background-color: #3a4054;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+.precedent_filtres,
+.suivant_filtres {
+    display: none;
+}
+
+.precedent:hover,
+.precedent_filtres:hover,
+.suivant:hover,
+.suivant_filtres:hover {
+    opacity: 0.8;
+}
+
+.precedent:active,
+.precedent_filtres:hover,
+.suivant:active,
+.suivant_filtres:hover {
+    background-color: #20273d;
+}
+
+.precedent,
+.precedent_filtres {
+    left: 2em;
+}
+
+.suivant,
+.suivant_filtres {
+    right: 2em;
+}
+
+.num_page,
+.num_page_f {
+    display: block;
+    margin-top: 1em;
+    color: white;
+    font-weight: 600;
+    font-family: sans-serif;
+    font-size: 2em;
+    text-align: center;
+}
+
+.num_page_f {
+    display: none;
+}
+
+.infosPays,
+.drapeauPays {
+    display: none;
+    position: fixed;
+    top: 25%;
+    left: 20%;
+    width: 45%;
+    padding: 5em 10em;
+    background-color: #20273d;
+    border-radius: 20px;
+    box-shadow: 0 0 10px black;
+    flex-direction: column;
+    align-items: center;
+    z-index: 20;
+}
+
+.drapeauPays {
+    top: 20%;
+}
+
+.infosPays span,
+.infosPays h1 {
+    color: #f2f2f2;
+    font-family: sans-serif;
+}
+
+.infosPays h1 {
+    margin-bottom: 2em;
+}
+
+.infosPays span {
+    margin: 0 3em;
+    font-size: 1.2em;
+    width: max-content;
+}
+
+.infos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.infos div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.infos h2 {
+    color: #e4e4e4;
+    font-family: sans-serif;
+    text-decoration: underline;
+}
+
+.dPays {
+    z-index: 9;
+}
+
+.fermer_fen,
+.fermer_fen2 {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.filtrages form {
+    padding: 2em;
+    margin: 1em 0;
+    background-color: #20273d;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 2px 5px black;
+}
+
+.contfiltrage,
+.languesfiltrage,
+.paysfiltrage {
+    font-family: sans-serif;
+    color: white;
+    font-size: 1.1em;
+}
+
+.contfiltrage select,
+.languesfiltrage select,
+form button,
+.paysfiltrage input {
+    padding: 0.7em;
+    border-radius: 10px;
+    font-weight: 600;
+    background-color: #43485c;
+    color: white;
+    border: none;
+    box-shadow: 0 0 3px black;
+    transition: all 0.2s ease-in-out;
+}
+
+.contfiltrage select,
+.languesfiltrage select,
+form button {
+    cursor: pointer;
+}
+
+.contfiltrage select:hover,
+.languesfiltrage select:hover,
+form button:hover,
+.paysfiltrage input:hover {
+    background-color: #52586e;
+}
+
+form button:active,
+.paysfiltrage input:active {
+    background-color: #616883;
+}

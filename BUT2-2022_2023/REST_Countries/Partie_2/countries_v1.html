@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pays TP REST Countries</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>TP Rest Countries Partie 2</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Pays</th>
+                <th>Nom</th>
+                <th>Population</th>
+                <th>Surface</th>
+                <th>Densité (Population)</th>
+                <th>Continent</th>
+                <th>Drapeau</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+</body>
+
+<script src="../countries.js"></script>
+<script>
+
+    const tbody = document.querySelector('tbody');
+
+    let cpt = 1;
+
+    for (const country in all_countries) {
+
+        let num = document.createElement("td");
+        let nom = document.createElement("td");
+        let pop = document.createElement("td");
+        let surface = document.createElement("td");
+        let densite = document.createElement("td");
+        let continent = document.createElement("td");
+        let url = document.createElement("td");
+        let image = document.createElement("img");
+
+        url.appendChild(image);
+        url.classList.add("url");
+
+        let tr = document.createElement("tr");
+        tr.classList.add("template")
+        num.innerHTML = cpt;
+        tr.appendChild(num);
+
+        // Nom du pays
+        nom.innerHTML = all_countries[country]._nom;
+        tr.appendChild(nom);
+
+        // Population du pays
+        pop.innerHTML = all_countries[country]._population;
+        tr.appendChild(pop);
+
+        // Superficie du pays
+        if (all_countries[country]._superficie != null) {
+            surface.innerHTML = all_countries[country]._superficie + " km<sup>2</sup>";
+            tr.appendChild(surface);
+        } else {
+            surface.innerHTML = "Indisponible";
+            tr.appendChild(surface);
+        }
+
+        // Densité du pays
+        if (all_countries[country].getPopDensity() != null) {
+            densite.innerHTML = all_countries[country].getPopDensity();
+            tr.appendChild(densite);
+        } else {
+            densite.innerHTML = "Indisponible";
+            tr.appendChild(densite);
+        }
+
+        // Continent du pays
+        continent.innerHTML = all_countries[country]._continent;
+        tr.appendChild(continent);
+
+        // Drapeau du pays
+        image.src = all_countries[country]._drapeau;
+        console.log(all_countries[country]._drapeau);
+        tr.appendChild(url);
+
+        tbody.appendChild(tr);
+        cpt++;
+    }
+
+
+</script>
+
+</html>

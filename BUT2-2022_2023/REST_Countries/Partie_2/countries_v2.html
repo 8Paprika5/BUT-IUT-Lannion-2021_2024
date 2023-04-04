@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pays TP REST Countries</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>TP Rest Countries Partie 2</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Pays</th>
+                <th>Nom</th>
+                <th>Population</th>
+                <th>Surface</th>
+                <th>Densité (Population)</th>
+                <th>Continent</th>
+                <th>Drapeau</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <button class="precedent">PRÉC</button>
+    <span class="num_page">1</span>
+    <button class="suivant">SUIV</button>
+
+</body>
+
+<script src="../countries.js"></script>
+<script>
+
+    const tbody = document.querySelector('tbody');
+    var num = document.querySelector(".num_page");
+    var numeroPage = parseInt(num.innerHTML);
+    var indice = 0;
+    var num_page = 0;
+    var cpt = 1;
+
+    /**
+     * 
+     * Fonction qui génère tous les pays au début du chargement de la page
+     * 
+     * */
+    function afficherPays(occur) {
+        
+        for (const country in all_countries) {
+            let num = document.createElement("td");
+            let nom = document.createElement("td");
+            let pop = document.createElement("td");
+            let surface = document.createElement("td");
+            let densite = document.createElement("td");
+            let continent = document.createElement("td");
+            let url = document.createElement("td");
+            let image = document.createElement("img");
+
+            url.appendChild(image);
+            url.classList.add("url");
+
+            let tr = document.createElement("tr");
+            tr.classList.add("template")
+            num.innerHTML = cpt;
+            tr.appendChild(num);
+
+            // Nom du pays
+            nom.innerHTML = all_countries[country]._nom;
+            tr.appendChild(nom);
+
+            // Population du pays
+            pop.innerHTML = all_countries[country]._population;
+            tr.appendChild(pop);
+
+            // Superficie du pays
+            if (all_countries[country]._superficie != null) {
+                surface.innerHTML = all_countries[country]._superficie + " km<sup>2</sup>";
+                tr.appendChild(surface);
+            } else {
+                surface.innerHTML = "Indisponible";
+                tr.appendChild(surface);
+            }
+
+            // Densité du pays
+            if (all_countries[country].getPopDensity() != null) {
+                densite.innerHTML = all_countries[country].getPopDensity();
+                tr.appendChild(densite);
+            } else {
+                densite.innerHTML = "Indisponible";
+                tr.appendChild(densite);
+            }
+
+            // Continent du pays
+            continent.innerHTML = all_countries[country]._continent;
+            tr.appendChild(continent);
+
+            // Drapeau du pays
+            image.src = all_countries[country]._drapeau;
+            tr.appendChild(url);
+
+            tbody.appendChild(tr);
+            cpt++;
+
+        }
+    }
+
+    let p = document.querySelector("tbody");
+    templates = p.children;
+
+    let precedent = document.querySelector(".precedent");
+    let suivant = document.querySelector(".suivant");
+    let page = document.querySelector(".num_page");
+
+    /**
+     * 
+     * Fonction qui met à jour l'affichage des lignes. 
+     * En fonction de l'indice, cela enlève les parties autour des 25 pays à afficher
+     * 
+     * */
+    function update() {
+
+        for (let i = 0; i < templates.length; i++) {            
+            if (i < indice) {
+                templates[i].style.visibility = "collapse";
+            }
+            if ((indice < i+1) && (i < indice + 27)) {
+                templates[i].style.visibility = "visible";
+            }
+            if (i > indice + 25) {
+                templates[i].style.visibility = "collapse";
+            }
+        }
+    }
+
+    /**
+     * 
+     * Fonction qui affiche/retire les boutons Suivant et Précédent 
+     * En fonction du numéro de page, si on est au début, cela enlève le "Précédent" et la même chose pour "Suivant"
+     * 
+     * */
+    function afficheBoutons() {
+        if (num_page <= 1) {
+            precedent.style.display = "none";
+        } else {
+            precedent.style.display = "block";
+        }
+
+        if (num_page >= cpt / 26) {
+            suivant.style.display = "none";
+        } else {
+            suivant.style.display = "block";
+        }
+    }
+
+    /**
+     * 
+     * L'évènement du bouton Précédent qui met à jour le numéro de page, l'indice
+     * 
+     */
+    precedent.addEventListener("click", () => {
+        num_page -= 1;
+        indice -= 26;
+        numeroPage -= 1;
+        num.innerHTML = numeroPage;
+        update();
+        afficheBoutons();
+    });
+
+    /**
+     * 
+     * L'évènement du bouton Suivant qui met à jour le numéro de page, l'indice
+     * 
+     */
+    suivant.addEventListener("click", () => {
+        num_page += 1;
+        indice += 26;
+        numeroPage += 1;
+        num.innerHTML = numeroPage;
+        update();
+        afficheBoutons();
+    });
+
+    afficherPays(indice);
+    update();
+    num_page += 1;
+    afficheBoutons();
+
+</script>
+
+</html>
