@@ -1,0 +1,61 @@
+[
+    {
+        "vendeur": {
+            "nomVendeur": "Alpinne",
+            "raisonSociale": "AlpinneCorp",
+            "siretVendeur": "489786343",
+            "lien_logo": "img\/vendeur\/2\/img1.webp",
+            "emailVendeur": "alpinne@gmail.com",
+            "TVA_Vendeur": "FR34489786343",
+            "nom_de_rue": "24 rue des voitures",
+            "ville": "Le mans",
+            "code_postal": "72220",
+            "presentationVendeur": "Notre entreprise Alpine, appelée \"Alpes Gourmandes\", est spécialisée dans la vente de produits alimentaires de qualité issus de la région alpine. Nous travaillons en étroite collaboration avec des producteurs locaux pour offrir à nos clients des produits frais, savoureux et écologique",
+            "noteVendeur": "Alpine est une entreprise dynamique qui se dévoue à fournir des produits alimentaires de qualité supérieure à ses clients. En se concentrant sur les ingrédients locaux, Alpine offre des produits frais et de saison qui répondent aux normes les plus élevées en matière de qualité et de durabilité."
+        },
+        "produits": [
+            {
+                "Nom_produit": "Miel Breton toutes fleurs",
+                "Prix_vente_HT": "29.20",
+                "Prix_vente_TTC": "32.12",
+                "Description_produit": "Récolté à la main et avec soin par des apiculteurs passionnés, notre miel toutes fleurs breton de 125g est doté d'une texture onctueuse et d'une couleur dorée, caractéristiques de sa qualité exceptionnelle. Il est également riche en nutriments et en propriétés médicinales, pour vous offrir un choix de santé et de bien-être.",
+                "lien_image": "img\/catalogue\/Produits\/3\/img1.jpg"
+            },
+            {
+                "Nom_produit": "Beurre salé",
+                "Prix_vente_HT": "6.55",
+                "Prix_vente_TTC": "7.21",
+                "Description_produit": "Notre beurre salé de 500g est fabriqué à partir de lait de qualité supérieure, provenant de vaches élevées dans des pâturages verts et sains. Son goût crémeux et sa texture fondante en font le choix parfait pour les amateurs de beurre.",
+                "lien_image": "img\/catalogue\/Produits\/4\/img1.jpg"
+            },
+            {
+                "Nom_produit": "Bolée triskell marron sans anse",
+                "Prix_vente_HT": "4.99",
+                "Prix_vente_TTC": "5.99",
+                "Description_produit": "Bolée triskell marron sans anse en grès véritable.",
+                "lien_image": "img\/catalogue\/Produits\/19\/img1.jpg"
+            },
+            {
+                "Nom_produit": "Bolée triskell marron avec anse'",
+                "Prix_vente_HT": "4.90",
+                "Prix_vente_TTC": "5.88",
+                "Description_produit": "Cette bolée à cidre typiquement bretonne apportera une touche traditionnelle à vos soirées crêpes & galettes. Elle est idéale pour déguster le cidre dans la plus pure tradition Bretonne !",
+                "lien_image": "img\/catalogue\/Produits\/21\/img1.jpg"
+            },
+            {
+                "Nom_produit": "Bolée avec anse 'Poisson noir'",
+                "Prix_vente_HT": "4.90",
+                "Prix_vente_TTC": "5.88",
+                "Description_produit": "A votre prochaine soirée crêpes, pensez à notre bolée anse poisson noire pour déguster du cidre ou du jus de pomme. Des boissons traditionnelles qui peuvent être idéalement accompagnées à des crêpes et des galettes Bretonnes.",
+                "lien_image": "img\/catalogue\/Produits\/22\/img1.jpg"
+            },
+            {
+                "Nom_produit": "Porte-clé Breton",
+                "Prix_vente_HT": "3.50",
+                "Prix_vente_TTC": "4.20",
+                "Description_produit": "Notre porte-clés breton mesure environ 7 cm de long et présente un motif en relief représentant un triskèle, symbole traditionnel de la Bretagne. Le porte-clés est également équipé d'un anneau en métal solide, pour une utilisation pratique et durable.",
+                "lien_image": "img\/catalogue\/Produits\/23\/img1.jpg"
+            }
+        ]
+    }
+]

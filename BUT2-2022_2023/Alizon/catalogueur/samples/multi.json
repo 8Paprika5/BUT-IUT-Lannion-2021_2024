@@ -1,0 +1,142 @@
+[
+    {
+        "vendeur": {
+            "nomVendeur": "Totale",
+            "raisonSociale": "TotaleProduit",
+            "siretVendeur": "542051180",
+            "lien_logo": "img\/vendeur\/1\/img1.webp",
+            "emailVendeur": "totale@gmail.com",
+            "TVA_Vendeur": "FR59542051180",
+            "nom_de_rue": "1 rue des potillé",
+            "ville": "Ecommoy",
+            "code_postal": "72220",
+            "presentationVendeur": "TOTAL est la 4ème compagnie de denrée alimentaire Bretonne (sur la base de la capitalisation boursière). aval ( trading et transport maritime de produits alimentaires et de produits agricoles, distribution).",
+            "noteVendeur": "Totale est une entreprise Bretonne totalement écologique, qui cultivie des produits BIO sans pesticide"
+        },
+        "produits": [
+            {
+                "Nom_produit": "Breizh Cola - 1,5L",
+                "Prix_vente_HT": "1.16",
+                "Prix_vente_TTC": "1.28",
+                "Description_produit": "La recette originale, créée en 2002.Son secret ? Un dosage parfait des ingrédients, lui donnant de fines bulles.Un gout plébiscité par les consommateurs depuis 20 ans !",
+                "lien_image": "img/catalogue/Produits/1/img1.jpg",
+                "ID_vendeur": 1
+            },
+            {
+                "Nom_produit": "Breizh lim' - 1,5L",
+                "Prix_vente_HT": "0.94",
+                "Prix_vente_TTC": "1.03",
+                "Description_produit": "Suivant l'authentique recette de la limonaderie Wittersheim créée à Brest, dans le Finistère, en 1905, Breizh Lim' perpétue un savoir faire traditionnel.",
+                "lien_image": "img\/catalogue\/Produits\/11\/img1.webp",
+                "ID_vendeur": 1
+            },
+            {
+                "Nom_produit": "Maquereau, poivron jaune et piment d'espelette",
+                "Prix_vente_HT": "9.25",
+                "Prix_vente_TTC": "9.76",
+                "Description_produit": "Notre maquereau est pêché dans les eaux froides et cristallines des côtes bretonnes, pour garantir sa qualité et sa fraîcheur. Il est ensuite accompagné de poivrons jaunes savoureux et de piment d'Espelette.",
+                "lien_image": "img\/catalogue\/Produits\/24\/img1.jpg",
+                "ID_vendeur": 1
+            }
+        ]
+    },
+    {
+        "vendeur": {
+            "nomVendeur": "Alpinne",
+            "raisonSociale": "AlpinneCorp",
+            "siretVendeur": "489786343",
+            "lien_logo": "img\/vendeur\/2\/img1.webp",
+            "emailVendeur": "alpinne@gmail.com",
+            "TVA_Vendeur": "FR34489786343",
+            "nom_de_rue": "24 rue des voitures",
+            "ville": "Le mans",
+            "code_postal": "72220",
+            "presentationVendeur": "Notre entreprise Alpine, appelée \"Alpes Gourmandes\", est spécialisée dans la vente de produits alimentaires de qualité issus de la région alpine. Nous travaillons en étroite collaboration avec des producteurs locaux pour offrir à nos clients des produits frais, savoureux et écologique",
+            "noteVendeur": "Alpine est une entreprise dynamique qui se dévoue à fournir des produits alimentaires de qualité supérieure à ses clients. En se concentrant sur les ingrédients locaux, Alpine offre des produits frais et de saison qui répondent aux normes les plus élevées en matière de qualité et de durabilité."
+        },
+        "produits": [
+            {
+                "Nom_produit": "Miel Breton toutes fleurs",
+                "Prix_vente_HT": "29.20",
+                "Prix_vente_TTC": "32.12",
+                "Description_produit": "Récolté à la main et avec soin par des apiculteurs passionnés, notre miel toutes fleurs breton de 125g est doté d'une texture onctueuse et d'une couleur dorée, caractéristiques de sa qualité exceptionnelle. Il est également riche en nutriments et en propriétés médicinales, pour vous offrir un choix de santé et de bien-être.",
+                "lien_image": "img\/catalogue\/Produits\/3\/img1.jpg",
+                "ID_vendeur": 2
+            },
+            {
+                "Nom_produit": "Bolée avec anse 'Poisson noir'",
+                "Prix_vente_HT": "4.90",
+                "Prix_vente_TTC": "5.88",
+                "Description_produit": "A votre prochaine soirée crêpes, pensez à notre bolée anse poisson noire pour déguster du cidre ou du jus de pomme. Des boissons traditionnelles qui peuvent être idéalement accompagnées à des crêpes et des galettes Bretonnes.",
+                "lien_image": "img\/catalogue\/Produits\/22\/img1.jpg",
+                "ID_vendeur": 2
+            }
+        ]
+    },
+    {
+        "vendeur": {
+            "nomVendeur": "Picardddd",
+            "raisonSociale": "PicardIndustrie",
+            "siretVendeur": "784939688",
+            "lien_logo": "img\/vendeur\/3\/img1.webp",
+            "emailVendeur": "pica@gmail.com",
+            "TVA_Vendeur": "FR31784939688",
+            "nom_de_rue": "11 rue des surgelés",
+            "ville": "Paris",
+            "code_postal": "75000",
+            "presentationVendeur": "Picard est une entreprise bien établie dans le domaine des produits surgelés, qui se distingue par son large choix de produits de qualité. Avec plus de 1 000 produits différents, Picard offre une variété de plats, de desserts et de collations pour répondre aux besoins de ses clients.",
+            "noteVendeur": "Picard est une entreprise qui se dévoue à fournir des produits de qualité exceptionnelle à ses clients. Grâce à sa large sélection de produits,picardddd offre une grande variété de denrée pour tous les goûts et tous les besoins."
+        },
+        "produits": [
+            {
+                "Nom_produit": "Kouign-amann",
+                "Prix_vente_HT": "18.71",
+                "Prix_vente_TTC": "20.58",
+                "Description_produit": "Notre kouign-amann est préparé selon une recette traditionnelle, qui lui confère sa texture fondante et son goût riche et savoureux. Il est fabriqué avec du beurre salé de qualité supérieure, qui lui donne son goût unique et sa texture moelleuse.",
+                "lien_image": "img\/catalogue\/Produits\/1\/img1.jpg",
+                "ID_vendeur": 3
+            },
+            {
+                "Nom_produit": "Quatre-Quarts",
+                "Prix_vente_HT": "7.10",
+                "Prix_vente_TTC": "7.81",
+                "Description_produit": "Notre quatre-quarts réalisé en petite ou grande barre, un régal au goûter, ce gâteau complètement barré saura satisfaire les petits (et les grands) gourmands.",
+                "lien_image": "img\/catalogue\/Produits\/2\/img1.jpg",
+                "ID_vendeur": 3
+            }
+        ]
+    },
+    {
+        "vendeur": {
+            "nomVendeur": "LVP",
+            "raisonSociale": "LuisPasViton",
+            "siretVendeur": "347662454",
+            "lien_logo": "img\/vendeur\/4\/img1.webp",
+            "emailVendeur": "lVP@gmail.com",
+            "TVA_Vendeur": "FR15347662454",
+            "nom_de_rue": "Zone industrielle des peupliers",
+            "ville": "Marseille",
+            "code_postal": "13000",
+            "presentationVendeur": "LuisPasViton est une entreprise renommée dans le domaine alimentaire, qui se dévoue à fournir des produits de qualité exceptionnelle à ses clients. Grâce à leur expertise en matière de luxe, Louis Vuitton offre une gamme de produits culinaires haut de gamme, qui allient qualité et raffinement.",
+            "noteVendeur": "LuisPasViton est une entreprise qui se dévoue à fournir une expérience gastronomique de luxe à ses clients. Grâce à leur savoir-faire et leur engagement envers la qualité, ils proposent une gamme de produits alimentaires haut de gamme qui allient saveurs raffinées et ingrédients de qualité exceptionnelle."
+        },
+        "produits": [
+            {
+                "Nom_produit": "Breizh Whisky - 70cl",
+                "Prix_vente_HT": "24.99",
+                "Prix_vente_TTC": "29.99",
+                "Description_produit": "Le Breizh Whisky est le parfait équilibre entre whisky de malt et whisky de grain, un vieillisement en fûts de chêne traditionnels, le tout sublimé par le climat si particulier de la Bretagne. Voici quelques uns des paramètres qui sont à l'origine de cet excellent whisky Breton blended.",
+                "lien_image": "img\/catalogue\/Produits\/15\/img1.jpg",
+                "ID_vendeur": 4
+            },
+            {
+                "Nom_produit": "Armorik Tradition BIO - 70cl",
+                "Prix_vente_HT": "32.00",
+                "Prix_vente_TTC": "38.40",
+                "Description_produit": "Le Whisky Armorik Tradition Bio est fruité, malté et contient des notes épicées. Il est élaboré à partir d'un assemblage de fûts de bourbon et de sherry oloroso.Armorik, Whisky Breton Single Malt, est distillé, vieilli et embouteillé en Bretagne par la Distillerie Warenghem à Lannion, France.Elaboré à partir d'orge malté issue de l'agriculture biologique, double distillé dans nos alambics de cuivre et vieilli en fût de chêne, il est non filtré à froid et sans ajout de caramel, pour préserver son",
+                "lien_image": "img\/catalogue\/Produits\/16\/img1.jpg",
+                "ID_vendeur": 4
+            }
+        ]
+    }
+]

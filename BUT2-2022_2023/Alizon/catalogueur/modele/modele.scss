@@ -1,0 +1,139 @@
+$color_1: #023064;
+$color_2: #FFB703;
+$color_3: #615757;
+$font-family_1: 'montserrat';
+$background-color_1: pink;
+$border-color_1: #FFB703;
+
+.main_fiche_vendeur {
+	font-size: 1.2em;
+	font-family: $font-family_1;
+	>section {
+		>h2 {
+			text-align-last: center;
+		}
+	}
+}
+.DescriptionVendeur {
+	width: 1300px;
+	height: auto;
+	margin: auto;
+	background: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+}
+.barre_jaune {
+	border-color: $border-color_1;
+	margin: 0 10%;
+}
+.vendeurPartieHaut {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	>.imgVendeur {
+		>img {
+			width: 200px;
+			height: 250px;
+			object-fit: cover;
+			border-radius: 15px;
+			margin: 10px;
+		}
+	}
+}
+.infos_vendeur {
+	display: flex;
+	flex-wrap: wrap;
+}
+.informationsVenSansNote {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.Adresse {
+	>h4 {
+		margin: 0;
+	}
+}
+.AdresseVendeur {
+	margin-right: 10em;
+	margin-top: 1.5em;
+}
+.block1infos {
+	padding-right: 5em;
+}
+.infosSupp {
+	padding-right: 5em;
+}
+.vendeurDescription {
+	padding: 1em;
+}
+.titre_produit {
+	text-align-last: center;
+}
+.infos_produit_vendeur {
+	display: flex;
+	flex-direction: row;
+	align-self: flex-start;
+	gap: 10px;
+	>img {
+		padding: 0 10px 0 10px;
+		width: 225px;
+		height: 250px;
+		object-fit: cover;
+		border-radius: 10%;
+	}
+}
+.produit_vendeur {
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+	box-shadow: 0 0px 8px rgba(0, 0, 0, 60%);
+	border-radius: 10px;
+	padding: 2%;
+	width: 80%;
+	margin-bottom: 2%;
+	border: 1px solid #FFB703;
+	margin: 0 100px;
+	margin-bottom: 2%;
+}
+.entÃªte_infos_vendeur {
+	>img {
+		width: 150px;
+	}
+}
+.column_vendeur_infos {
+	>h3 {
+		text-align: center;
+		background-color: $background-color_1;
+	}
+}
+.info_produit_bleu_vendeur {
+	color: $color_1;
+}
+.info_produit_jaune_vendeur {
+	color: $color_2;
+}
+.infos_produit1 {
+	display: flex;
+	flex-direction: row;
+	gap: 5px;
+}
+.info_produit_gris_vendeur {
+	color: $color_3;
+}
+.vendeur_HT {
+	display: flex;
+	margin: 25.536px 40px 25.536px 40px;
+	>h4 {
+		margin: unset;
+	}
+}
+.vendeur_TTC {
+	display: flex;
+	margin: 25.536px 40px 25.536px 40px;
+	>h4 {
+		margin: unset;
+	}
+}

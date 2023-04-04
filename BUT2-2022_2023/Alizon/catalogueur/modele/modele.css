@@ -1,0 +1,134 @@
+.main_fiche_vendeur{
+    font-size: 1.2em;
+    font-family: 'montserrat';
+}
+.main_fiche_vendeur>section>h2{
+    text-align-last:center ;
+}
+.DescriptionVendeur{
+        
+    width: 1300px;
+    height: auto;
+    margin: auto;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+ 
+}
+.barre_jaune{
+    border-color : #FFB703;
+    margin: 0 10%;
+  
+}
+.vendeurPartieHaut{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.infos_vendeur{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.informationsVenSansNote{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.Adresse>h4{
+    margin: 0;
+}
+
+.AdresseVendeur{
+    margin-right: 10em;
+    margin-top:1.5em;
+}
+
+.block1infos{
+    padding-right: 5em;
+}
+.infosSupp{
+    padding-right: 5em;
+}
+.vendeurDescription{
+    padding: 1em;
+}
+
+.vendeurPartieHaut>.imgVendeur>img{
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+
+.titre_produit{
+    text-align-last: center;
+}
+
+.infos_produit_vendeur{
+    display : flex;
+    flex-direction: row;
+    align-self: flex-start;
+    gap: 10px;
+}
+
+.produit_vendeur{
+    display : flex;
+    flex-direction : column;
+    align-self: center;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 60%);
+    border-radius: 10px;
+    padding : 2%;
+    width : 80%;
+    margin-bottom: 2%; 
+    border : 1px solid #FFB703;
+    margin : 0 100px;
+    margin-bottom: 2%;
+}
+
+.entÃªte_infos_vendeur>img{
+    width: 150px;
+}
+
+.column_vendeur_infos>h3{
+    text-align: center;
+    background-color: pink;
+}
+
+.info_produit_bleu_vendeur{
+    color : #023064;
+}
+
+.info_produit_jaune_vendeur{
+    color : #FFB703;
+}
+
+.infos_produit1{
+    display: flex;
+    flex-direction: row;
+    gap : 5px;
+}
+
+.info_produit_gris_vendeur{
+    color : #615757;
+}
+.infos_produit_vendeur>img{
+    padding: 0 10px 0 10px;
+    width: 225px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10%;
+}
+
+.vendeur_HT,.vendeur_TTC{
+    display: flex;
+    margin: 25.536px 40px 25.536px 40px;
+    
+}
+.vendeur_HT>h4,.vendeur_TTC>h4{
+    margin: unset;
+}

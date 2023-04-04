@@ -1,0 +1,5 @@
+20/01/2023 16:41:33 : test :  commande utilisée :  alizon --archive : archive toutes les commandes achévées 
+20/01/2023 16:41:43 : test :  commande utilisée :  alizon --help : affiche toutes les commandes disponibles du simulateur
+20/01/2023 16:42:38 : test :  commande utilisée :  alizon --commandeFini : affiche toutes les commandes achéveés
+20/01/2023 17:16:51 : alizon :  commande utilisée :  alizon --help : affiche toutes les commandes disponibles du simulateur
+20/01/2023 17:32:09 : alizon :  commande utilisée :  alizon --commandeFini : affiche toutes les commandes achéveés
