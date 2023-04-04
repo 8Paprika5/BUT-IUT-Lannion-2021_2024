@@ -1,0 +1,438 @@
+
+
+/*NOUVEAU*/
+
+/*
+CSS version 1.0
+date de derniere modif : 25/10/2002 13h:52
+par: Clément Mabileau
+detail:
+Creation du squelette du CSS
+*/
+
+
+
+/*///////////////////////////////////////////////////////////////////////////////
+Police de caractère:
+///////////////////////////////////////////////////////////////////////////////*/
+
+/*Police de logo*/
+@font-face {
+    font-family: 'montserrat';
+    src: url('fonts/montserrat/montserrat-regular-webfont.woff2') format('woff2'),
+         url('fonts/montserrat/montserrat-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*Police de titre*/
+@font-face {
+    font-family: 'carter';
+    src: url('fonts/carterOne/carterone-webfont.woff2') format('woff2'),
+        url('fonts/carterOne/carterone-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*Police de texte*/
+@font-face {
+    font-family: 'sniglet';
+    src: url('fonts/sniglet/sniglet-regular-webfont.woff2') format('woff2'),
+        url('fonts/sniglet/sniglet-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////
+General
+/////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+body {
+    margin: 0px;
+}
+
+input, a, label{
+    font-family: 'sniglet';
+    color: #000;
+    text-decoration: none;
+}
+
+h1, h2 {
+    font-family: 'carter', Arial, Helvetica, sans-serif;
+}
+
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////
+Header:
+//////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/*Menu :*/
+
+
+/*Burger menu*/
+.topnav {
+    overflow: hidden;
+    position: relative;
+    margin-left: 1em;
+    color: white;
+    padding: 20px;
+}
+
+#myLinks,
+#SubmyLinks {
+    display: none;
+}
+
+#myLinks>a,
+#SubmyLinks>a {
+    border: solid;
+}
+
+.topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+    cursor: pointer;
+}
+
+.topnav a.icon {
+
+    display: block;
+    position: absolute;
+    width: 50px;
+}
+
+/*apparance du menu global*/
+.menu {
+    background-color: #0869C8;
+    padding: 15px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Nom de marque logo*/
+.menu h1 {
+    margin: 0px 70px;
+}
+
+/*Lien index*/
+.menu h1 a {
+    color: white;
+    font-family: 'montserrat';
+}
+
+/*barre de recherche*/
+.menu form {
+    width: 80%;
+    padding-left: 5%;
+}
+
+form.example input[type=search] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid rgb(143, 120, 120);
+    float: left;
+    width: 80%;
+    background: #ffff;
+    border-radius: 7px 0 0 7px;
+}
+
+/*button du validation*/
+form.example button {
+    float: left;
+    height: 42px;
+    width: 5%;
+    padding: 10px;
+    background: white;
+    color: #0b7dda;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+    border-radius: 0 7px 7px 0;
+    margin: 0;
+}
+
+form.example button:hover {
+    background: #0b7dda;
+    color: white;
+}
+
+/*image menu*/
+
+.menu img {
+    margin-right: 60px;
+    filter: invert(100%);
+}
+
+/*mon panier*/
+.panier {
+    width: 4em;
+} 
+
+/*mon compte*/
+.compte{
+    width: 2.5em;
+}
+
+/*Barre de navigation*/
+
+/*style de la barre*/
+.navbar {
+    background-color: #0a70b8b2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-shrink: 2;
+}
+
+/*lien de la barre*/
+.navbar--liens {
+    list-style: none;
+    padding: 0.5em 5%;
+    color: white;
+    border-style: solid;
+    border-right-width: 0.1em;
+    border-left-width: 0.1em;
+    border-color: #080854;
+    text-align: center;
+    width: 10%;
+}
+
+.navbar--liens a {
+    color: white;
+    padding: 0.5em;
+}
+
+
+/*////////////////////////////////////////////////////////////////////
+Main:
+///////////////////////////////////////////////////////////////////*/
+
+
+.main_panier>div>h2{
+    color: #080854;
+}
+
+.recap>section>form>button, .recap>form>button{
+    color: #ffffff;
+    margin: 10px;
+    font-family: 'sniglet';
+}
+
+.panier{
+    width: 3.5em;
+}
+
+.main>div>section{
+    display: flex;
+}
+
+.main_panier{
+    display: flex;
+}
+
+.recap>hr, .recap>section>hr{
+    width: 90%;
+    background-color: #D9D9D9;
+    border: 0.5px solid #D9D9D9;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.div-panier{
+    width: 70%;
+    margin: 40px;
+}
+
+.div-panier>hr{
+    width: 100%;
+}
+
+.div-panier h3{
+   font-family: sniglet;
+}
+
+.div-panier>section{
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.div-panier>section>aside{
+    background-color: #0a70b8b2;
+    border-radius: 10px;
+    padding: 1px 50px;
+    text-align: left;
+    color: #ffffff;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.4)
+}
+
+.div-panier>section>article{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 50px;
+    text-align: left;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.4);
+}
+
+.div-panier>section>article>aside{
+    display: flex;
+    flex-direction: column;
+}
+
+.div-panier>section>article>aside>h3{
+    margin: 5px auto;
+    font-family: 'montserrat';
+}
+
+.div-panier>section>article>aside>h5{
+    color: #080854;
+    margin: 0px;
+}
+
+.val{
+    margin-bottom: 5px;
+    color: #080854;
+}
+
+.custom-select{
+    margin: 0px 90px 70px 90px;
+    border-radius: 10px;
+    box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.4);
+    padding: 5px;
+    color: #080854;
+}
+
+.recap{
+    width: 20%;
+    margin: 40px 60px;
+    position: sticky;
+    top: 20px;
+}
+
+.recap>section{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.4);
+    font-family: 'montserrat';
+}
+
+.recap>section>article{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 30px;
+}
+
+.recap>section>article>aside>h5{
+    font-family: 'sniglet';
+}
+
+.recap>section>form{
+    text-align: center;
+}
+
+.recap>section>form>button{
+    width: 80%;
+    background-color: #0869C8;
+    border-radius: 10px;
+    border: none;
+    padding: 15px 10px;
+}
+
+.recap>form{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.recap>form>button{
+    width: 50%;
+    border-radius: 10px;
+    background-color: #080854;
+    padding: 10px 10px;
+}
+
+.recap>section>article>h3{
+    font-family: 'carter';
+    color: #080854;
+}
+
+.prix{
+    color: #CB333B;
+    font-family: 'carter';
+}
+
+.photo-prod{
+    height: 150px;
+}
+
+.stock{
+    display: flex;
+    align-items: center;
+}
+
+.stock>img{
+    width: 5em;
+}
+
+.coloGris{
+    color: #615757;
+}
+
+.suppr{
+    color: #CB333B;
+    align-content: flex-end;
+}
+
+
+/*////////////////////////////////////////////////////////////////////
+Footer:
+///////////////////////////////////////////////////////////////////*/
+
+footer {
+    background-color: #080854;
+    color: white;
+
+}
+
+footer>section {
+    background: #0b7dda;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer>figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 10px 0 10px;
+}
+
+footer>figure>img {
+    width: 5em;
+    margin-right: 20px;
+    filter: invert(100%);
+}
+
+
+footer>figure>figcaption {
+    font-size: 2em;
+}
+
+.gcbr {
+    padding-right: 5em;
+    margin-top: 10px;
+}

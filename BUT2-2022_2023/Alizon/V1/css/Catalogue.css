@@ -1,0 +1,89 @@
+main 
+{
+    padding: 50px;
+}
+
+h1
+{
+    text-align: center;
+}
+
+.carte_produit_ajout
+{
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content:flex-end;
+    text-decoration: none;
+    margin: 30px 10px;
+}
+
+.carte_produit_ajout--infos
+{
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+}
+
+.carte_produit_ajout--infos img
+{
+    width: 150px;
+    height: 150px;
+}
+
+.carte_produit_ajout--infos h2, .carte_produit_ajout--infos p 
+{
+    margin-left: 20px;
+}
+
+.carte_produit_ajout--infos p
+{
+    color: #615757;
+    font-size: 12px;
+}
+
+.carte_produit_ajout--infos img
+{
+    width: 150px;
+    height: 150px;
+}
+
+.carte_produit_ajout--boutons img
+{
+    width: 50px;
+    height: 50px;
+}
+
+.carte_produit_ajout--boutons, .carte_produit_ajout--boutons__add
+{
+    text-align: center;
+    padding-right: 50px;
+}
+
+.carte_produit_ajout--boutons__add
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.carte_produit_ajout--boutons__panier button
+{
+    background-color: #080854;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    width: 150px;
+}
+
+.carte_produit_ajout--boutons__panier
+{
+    margin-bottom: 20px;
+}
+
+.carte_produit_ajout--boutons__add h3
+{
+    color: #0869C8;
+    font-size: 25px;
+}
