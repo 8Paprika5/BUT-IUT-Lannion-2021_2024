@@ -1,0 +1,218 @@
+
+
+
+//Ce programme simule le jeu du yam's en utilisant le terminal comme interface graphique
+
+programme Yams c'est
+
+
+
+
+// #################### Déclaration de constante Constantes ####################
+
+// nombre de caractère maximum pour les noms des joueurs et les options de jeu
+// on compte 20 caractère plus une place pour le caractère de fin ("\0")
+constante entier CHARMAX = 21;
+
+
+// nombre de tour maximum par joueur
+constante entier TOURMAX = 13;
+
+
+//si le total des sommes des 1,2,3,4,5,6 est supérieur a CDTBONUS, le BONUS est appliqué
+constante entier BONUS = 32;
+constante entier CDTBONUS = 62;
+
+
+// définition des points fixe
+constante entier FULL = 25;
+constante entier P_SUITE = 30;
+constante entier G_SUITE = 40;
+constante entier YAMS = 50;
+
+
+
+
+// #################### déclaration des Types ####################
+
+// les valeurs des dés sont stockés dans un tableau de type t_Val_de
+type t_Val_de = tableau[1..5] de entier ;
+
+// les points des joueurs sont stockés dans des tableaux de type t_pts_J
+type t_pts_J = tableau[1..17] de entier;
+
+// les options de jeux sont stockés dans des tableaux de type t_options
+type t_options = tableau[1..CHARMAX] de caractère ;
+
+
+
+
+
+// #################### déclaration des Procédures ####################
+
+// les procédures suivantes permettent d'afficher des menu different selon le cours de la partie
+// le menu Principale, le menu du jeu avec les possibiités ou non de relancer les dés, de remplir la feuille de marque ...
+
+
+// affiche l'interface principale
+procédure affichage(        entF Val_de : t_Val_de,
+                            entF J1 : t_pts_J,
+                            entF J2 : t_pts_J,
+                            entF opt1 : t_options,
+                            entF opt2 : t_options,
+                            entF opt3 : t_options,
+                            entF opt4 : t_options,
+                            entF opt5 : t_options,
+                            entF nom_J : t_options)
+
+// affiche le menu permetant au joueur de commencer a jouer, d'afficher les règles de jeu ou de quitter
+procédure Menu_Principale(  entF Val_de : t_Val_de,
+                            entF J1 : t_pts_J,
+                            entF J2 : t_pts_J,
+                            entF opt1 : t_options,
+                            entF opt2 : t_options,
+                            entF opt3 : t_options,
+                            entF opt4 : t_options,
+                            entF opt5 : t_options,
+                            entF nom_J1 : t_options,
+                            entF nom_J2 : t_options);
+
+// affiche le menu permetant au joueur de commencer une nouvelle partie ou de changer les noms des joueurs;
+procédure Menu_Jouer(       entF Val_de : t_Val_de,
+                            entF J1 : t_pts_J,
+                            entF J2 : t_pts_J,
+                            entF opt1 : t_options,
+                            entF opt2 : t_options,
+                            entF opt3 : t_options,
+                            entF opt4 : t_options,
+                            entF opt5 : t_options,
+                            entF nom_J1 : t_options,
+                            entF nom_J2 : t_options);
+
+// affiche le menu permetant au joueur de choisir un case ou de relancer les dés au cours de la partie
+procédure Menu_Partie(      entF/sortF Val_de : t_Val_de,
+                            entF J1 : t_pts_J,
+                            entF J2 : t_pts_J,
+                            entF opt1 : t_options,
+                            entF opt2 : t_options,
+                            entF opt3 : t_options,
+                            entF opt4 : t_options,
+                            entF opt5 : t_options,
+                            entF nom_J1 : t_options,
+                            entF nom_J2 : t_options);
+
+// affiche le menu permetant au joueur de modifier les nom des joueurs
+procédure Menu_Nom(         entF Val_de : t_Val_de,
+                            entF J1 : t_pts_J,
+                            entF J2 : t_pts_J,
+                            entF opt1 : t_options,
+                            entF opt2 : t_options,
+                            entF opt3 : t_options,
+                            entF opt4 : t_options,
+                            entF opt5 : t_options,
+                            entF/sortF nom_J1 : t_options,
+                            entF/sortF nom_J2 : t_options);
+
+// affiche le menu permetant au joueur de choisir un type de case a remplir
+procédure Menu_Cases(       entF Val_de : t_Val_de,
+                            entF J1 : t_pts_J,
+                            entF J2 : t_pts_J,
+                            entF opt1 : t_options,
+                            entF opt2 : t_options,
+                            entF opt3 : t_options,
+                            entF opt4 : t_options,
+                            entF opt5 : t_options,
+                            entF nom_J1 : t_options,
+                            entF nom_J2 : t_options);
+
+// affiche le menu permetant au joueur de remplir une case
+procédure Menu_Combinaisons_1(entF Val_de : t_Val_de,
+                            entF/sortF J1 : t_pts_J,
+                            entF/sortF J2 : t_pts_J,
+                            entF opt1 : t_options,
+                            entF opt2 : t_options,
+                            entF opt3 : t_options,
+                            entF opt4 : t_options,
+                            entF opt5 : t_options,
+                            entF nom_J1 : t_options,
+                            entF nom_J2 : t_options);
+
+// affiche le menu permetant au joueur de remplir une case
+procédure Menu_Combinaisons_2(entF Val_de : t_Val_de,
+                            entF/sortF J1 : t_pts_J,
+                            entF/sortF J2 : t_pts_J,
+                            entF opt1 : t_options,
+                            entF opt2 : t_options,
+                            entF opt3 : t_options,
+                            entF opt4 : t_options,
+                            entF opt5 : t_options
+                            entF nom_J1 : t_options,
+                            entF nom_J2 : t_options);
+
+// affiche le menu permetant au joueur de remplir une case
+procédure Menu_Somme(       entF Val_de : t_Val_de,
+                            entF/sortF J1 : t_pts_J,
+                            entF/sortF J2 : t_pts_J,
+                            entF opt1 : t_options,
+                            entF opt2 : t_options,
+                            entF opt3 : t_options,
+                            entF opt4 : t_options,
+                            entF opt5 : t_options,
+                            entF nom_J1 : t_options,
+                            entF nom_J2 : t_options);
+
+// affiche les résultats en fin de partie
+procédure AfficherResultat( entF Val_de : t_Val_de,
+                            entF J1 : t_pts_J,
+                            entF J2 : t_pts_J,
+                            entF opt1 : t_options,
+                            entF opt2 : t_options,
+                            entF opt3 : t_options,
+                            entF opt4 : t_options,
+                            entF opt5 : t_options,
+                            entF nom_J1 : t_options,
+                            entF nom_J2 : t_options);
+
+
+
+
+// les procédures suivantes ne font plus parties des menus précédants
+// ce sont des outils qui serviront tout au long du programme 
+
+
+// revoie les combinaison possible avec les passé en entréé
+procédure combinaison_possible(entF Val_de : t_Val_de)
+
+
+
+
+
+// #################### Programme Principale ####################
+début
+    Val_de :t_Val_de;
+    // correspond a " int Val_de1, Val_de2, Val_de3, Val_de4, Val_de5 ; "  sous forme de tableau
+    J1 :t_pts_J;
+    J2 :t_pts_J;
+    // correspond a "   int J2_un, J2_deux, J2_trois, J2_quatre, J2_cinq, J2_six;
+                        int J2_Bonus, J2_Total1;
+                        int J2_brelan, J2_carre, J2_full, J2_P_suite, J2_G_suite, J2_yams, J2_Chance, J2_Total2;
+                        int J2_Nbrtour
+                    "
+    //sous le forme d'un tableau (de meme pour J1)
+
+    nom_J1 : t_options;
+    nom_J2 : t_options;
+    nom_J1 = "joueur_1";
+    nom_J2 = "joueur_2";
+
+
+
+    Menu_Principale(entF Val_de : t_Val_de,
+                    entF J1 :t_pts_J,
+                    entF J2 :t_pts_J,
+                    "Jouer",
+                    "Les Règles\t\t", 
+                    "Quitter\t\t",
+                    "\t\t\t", "\t\t\t",
+                    nom_J1, nom_J2);
+fin
